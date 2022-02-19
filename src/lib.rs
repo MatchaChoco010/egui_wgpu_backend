@@ -8,7 +8,7 @@ use std::{borrow::Cow, collections::HashMap, fmt::Formatter, num::NonZeroU32};
 
 use bytemuck::{Pod, Zeroable};
 pub use wgpu;
-use wgpu::{util::DeviceExt};
+use wgpu::util::DeviceExt;
 
 /// Error that the backend can return.
 #[derive(Debug)]
@@ -616,9 +616,7 @@ impl RenderPass {
             entries: &[
                 wgpu::BindGroupEntry {
                     binding: 0,
-                    resource: wgpu::BindingResource::TextureView(
-                        texture,
-                    ),
+                    resource: wgpu::BindingResource::TextureView(texture),
                 },
                 wgpu::BindGroupEntry {
                     binding: 1,
